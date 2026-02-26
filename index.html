@@ -172,11 +172,11 @@
                     <!-- TABS -->
                     <div
                         class="flex border-b border-gray-800 sticky md:top-0 top-[56px] backdrop-blur-md bg-black/80 z-10 hover:transition hover:duration-200">
-                        <div
+                        <div id="forYouTab"
                             class="flex-1 text-center py-4 font-semibold border-b-2 border-blue-500 hover:bg-[#181818] hover:cursor-pointer">
                             For you
                         </div>
-                        <div class="flex-1 text-center py-4 text-gray-400 hover:bg-[#181818] hover:cursor-pointer">
+                        <div id="followingTab" class="flex-1 text-center py-4 font-semibold border-b-2 border-blue-500 text-gray-400 hover:bg-[#181818] hover:cursor-pointer">
                             Following
                         </div>
                     </div>
@@ -500,6 +500,8 @@
                             </div>
 
                         </div>
+
+                        <div id="followingFeed" class="hidden"></div>
                 </main>
 
 
@@ -663,6 +665,37 @@ flex items-center justify-center">
 
     <!--Javascript for infinite scroll loading indicator-->
     <script>
+
+const forYouTab = document.getElementById("forYouTab");
+const followingTab = document.getElementById("followingTab");
+
+const feed = document.getElementById("feed");
+const followingFeed = document.getElementById("followingFeed");
+
+let activeTab = "forYou";
+
+forYouTab.addEventListener("click", () => {
+    activeTab = "forYou";
+
+    feed.classList.remove("hidden");
+    followingFeed.classList.add("hidden");
+
+    forYouTab.classList.add("border-blue-500", "font-semibold", "text-white");
+    followingTab.classList.remove("border-blue-500", "font-semibold", "text-white");
+});
+
+followingTab.addEventListener("click", () => {
+    activeTab = "following";
+
+    feed.classList.add("hidden");
+    followingFeed.classList.remove("hidden");
+
+    followingTab.classList.add("border-blue-500", "font-semibold", "text-white");
+    forYouTab.classList.remove("border-blue-500", "font-semibold", "text-white");
+});
+
+
+
         let count = 0;
 
         function createPost() {
@@ -753,18 +786,55 @@ flex items-center justify-center">
                 scrollContainer.scrollTop + scrollContainer.clientHeight >=
                 scrollContainer.scrollHeight - 200
             ) {
-                loadPosts();
+                if (activeTab === "forYou") {
+            loadPosts();
+        } else {
+            loadFollowingPosts();
+        }
             }
         });
 
-        scrollContainer.addEventListener("scroll", () => {
-            if (
-                scrollContainer.scrollTop + scrollContainer.clientHeight >=
-                scrollContainer.scrollHeight - 200
-            ) {
-                loadPosts();
-            }
-        });
+        followingTab.addEventListener("click", () => {
+    activeTab = "following";
+
+    feed.classList.add("hidden");
+    followingFeed.classList.remove("hidden");
+
+    followingTab.classList.add("border-blue-500", "font-semibold");
+    forYouTab.classList.remove("border-blue-500", "font-semibold");
+
+    if (followingFeed.innerHTML.trim() === "") {
+        loadFollowingPosts();
+    }
+});
+
+        function loadFollowingPosts() {
+    const loader = document.getElementById("loading");
+    loader.classList.remove("hidden");
+
+    setTimeout(() => {
+        let posts = "";
+
+        for (let i = 0; i < 5; i++) {
+            posts += `
+            <div class="border-b border-gray-700 p-4 hover:bg-[#0a0a0a]">
+                <div class="flex gap-3">
+                    <img src="https://i.pravatar.cc/40?img=${count}" class="rounded-full w-10 h-10">
+                    <div>
+                        <p class="font-bold">Following User ${count}</p>
+                        <p class="text-gray-400">@following${count}</p>
+                        <p class="mt-2">Posts from people you follow 🔥</p>
+                    </div>
+                </div>
+            </div>`;
+            count++;
+        }
+
+        followingFeed.insertAdjacentHTML("beforeend", posts);
+        loader.classList.add("hidden");
+
+    }, 800);
+}
 
 
         // RIGHT SIDEBAR STOP LOGIC
