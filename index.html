@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+
+    <link rel="icon" type="image/png" href="assets/images.png">
+
+    <link rel="stylesheet" href="./src/output.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body class="bg-black text-white font-sans">
+
+    <!--- Main -->
+    <div class="flex justify-center">
+
+        <div class="flex w-full max-w-[1280px] mx-auto">
+
+            <!-- LEFT SIDEBAR -->
+            <aside
+                class="pr-2.5 pb-2 hidden md:flex flex-col justify-between w-[80px] lg:w-[260px] border-r border-gray-800 sticky top-0 h-screen">
+
+                <!-- TOP SECTION -->
+                <div>
+
+                    <!-- LOGO -->
+                    <div
+                        class="p-3 mt-0 rounded-full hover:bg-[#181818] w-fit cursor-pointer hover:transition hover:duration-200">
+                        <svg viewBox="0 0 24 24" class="w-8 fill-white">
+                            <path
+                                d="M21.742 21.75l-7.563-11.179 7.056-8.321h-2.456l-5.691 6.714-4.54-6.714H2.359l7.29 10.776L2.25 21.75h2.456l6.035-7.118 4.818 7.118h6.191z">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <!-- MENU -->
+                    <nav>
+
+                        <!-- ITEM -->
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">home</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Home</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">search</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Explore</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200 ">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Notifications</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">people</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Follow</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">chat</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Chat</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">orbit</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Grok</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">bookmark_border</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Bookmarks</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">workspace_premium</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Premium</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">person</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">Profile</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-3 rounded-full hover:bg-[#181818] cursor-pointer hover:transition hover:duration-200">
+                            <span class="material-symbols-outlined">Pending</span>
+                            <span class="hidden lg:block text-[20px] font-semibold">More</span>
+                        </div>
+
+                        <!-- POST BUTTON -->
+                        <button
+                            class="hidden lg:block bg-white text-black font-semibold rounded-full w-full py-2.5 mt-1.5">
+                            Post
+                        </button>
+
+                        <!-- MOBILE POST -->
+                        <button
+                            class="lg:hidden flex items-center justify-center bg-white text-black w-12 h-12 rounded-full mt-2">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+
+                    </nav>
+                </div>
+
+
+                <!-- PROFILE -->
+                <div class="p-2 hover:bg-[#181818] rounded-full cursor-pointer hover:transition hover:duration-200">
+                    <div class="flex items-center gap-3">
+
+                        <img src="https://i.pravatar.cc/40" class="rounded-full flex-shrink-0 w-10 h-10 object-cover">
+
+                        <div class="hidden lg:block">
+                            <p class="font-semibold text-[15px]">Samridhi Gupta</p>
+                            <p class="text-gray-500 text-sm">@samridhi</p>
+                        </div>
+
+                        <span class="material-symbols-outlined hidden lg:block ml-auto">
+                            more_horiz
+                        </span>
+                    </div>
+                </div>
+
+            </aside>
+
+
+            <!-- centre + right -->
+
+            <div id="scrollContainer"
+                class=" flex flex-1 h-screen overflow-y-auto overflow-x-hidden scroll-smooth items-start scrollbar-hover pb-[300px]">
+                <!---Center -->
+
+                <main class="border-r border-gray-800 w-150 shrink-0 min-h-screen">
+
+                    <!-- MOBILE TOP HEADER -->
+                    <div class="md:hidden sticky top-0 z-20  border-b border-gray-800 backdrop-blur-md bg-black/90">
+                        <div class="flex items-center justify-between px-4 py-3">
+
+                            <!-- Left Avatar -->
+                            <img src="https://i.pravatar.cc/32" class="w-8 h-8 rounded-full">
+
+                            <!-- Center Title -->
+                            <h2 class="font-semibold text-[18px]">
+                                Home
+                            </h2>
+
+                            <!-- Right Icon -->
+                            <span class="material-symbols-outlined text-white">
+                                auto_awesome
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <!-- TABS -->
+                    <div
+                        class="flex border-b border-gray-800 sticky md:top-0 top-[56px] backdrop-blur-md bg-black/80 z-10 hover:transition hover:duration-200">
+                        <div
+                            class="flex-1 text-center py-4 font-semibold border-b-2 border-blue-500 hover:bg-[#181818] hover:cursor-pointer">
+                            For you
+                        </div>
+                        <div class="flex-1 text-center py-4 text-gray-400 hover:bg-[#181818] hover:cursor-pointer">
+                            Following
+                        </div>
+                    </div>
+
+                    <!-- CREATE POST -->
+                    <div class="flex gap-2 p-4 border-b border-gray-800">
+                        <img src="https://i.pravatar.cc/40" class="rounded-full h-10" />
+
+                        <div class="flex-1">
+                            <input placeholder="What’s happening?"
+                                class="text-white w-full outline-none md:block text-xl font-normal" />
+
+                            <div class="flex justify-between mt-12 items-center">
+                                <div class="flex gap-4 text-[#1d9bf0]">
+                                    <span class="material-symbols-outlined">image</span>
+                                    <span class="material-symbols-outlined">gif_box</span>
+                                    <span class="material-symbols-outlined">orbit</span>
+                                    <span class="material-symbols-outlined">format_list_bulleted</span>
+                                    <span class="material-symbols-outlined">sentiment_satisfied</span>
+                                    <span class="material-symbols-outlined">calendar_clock</span>
+                                    <span class="material-symbols-outlined">location_on</span>
+                                </div>
+
+                                <button
+                                    class="bg-gray-400 font-semibold text-black px-5 py-2 rounded-full">Post</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Show posts-->
+                    <div
+                        class="text-[#1d9bf0] text-[15px] justify-center flex p-2.5 hover:bg-[#181818] hover:cursor-pointer border-b border-gray-800">
+                        Show 560 posts
+                    </div>
+                    <div>
+
+                        <!-- POSTS -->
+                        <div id="feed">
+
+                            <!-- POST 1 -->
+                            <div class="flex gap-3 p-4 border-b border-gray-800 hover:bg-[#0f0f0f] cursor-pointer">
+
+                                <!-- Avatar -->
+                                <img src="https://i.pravatar.cc/40" class="rounded-full h-10" />
+
+                                <!-- Content -->
+                                <div class="flex-1">
+
+                                    <!-- Header -->
+                                    <div class="flex items-center gap-2">
+                                        <p class="font-semibold">Samridhi Gupta</p>
+                                        <span
+                                            class="material-symbols-outlined text-[#1d9bf0] text-[18px]">verified</span>
+                                        <p class="text-gray-500 text-sm">@samridhi · 1h</p>
+
+                                        <!-- Right menu -->
+                                        <span class="material-symbols-outlined ml-auto text-gray-500 hover:text-white">
+                                            more_horiz
+                                        </span>
+                                    </div>
+
+                                    <!-- Tweet text -->
+                                    <p class="mt-2 text-[15px]">
+                                        Somewhere between college lectures and coding, I am learning to stay consistent.
+                                        Daily small efforts create big growth 🚀
+                                    </p>
+
+                                    <!-- Actions -->
+                                    <div class="flex justify-between mt-3 text-gray-500 max-w-[420px]">
+
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                                            24
+                                        </div>
+
+                                        <div class="flex items-center gap-2 hover:text-green-500">
+                                            <span class="material-symbols-outlined text-[18px]">repeat</span>
+                                            12
+                                        </div>
+
+                                        <div class="flex items-center gap-2 hover:text-pink-500">
+                                            <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                            150
+                                        </div>
+
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined text-[18px]">bar_chart</span>
+                                            3k
+                                        </div>
+
+                                        <span class="material-symbols-outlined hover:text-[#1d9bf0]">
+                                            bookmark_border
+                                        </span>
+
+                                        <span class="material-symbols-outlined hover:text-[#1d9bf0]">
+                                            upload
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- DIFFERENT TYPE POSTS WITH FULL ACTIONS -->
+
+                            <!-- POST 2 : TEXT -->
+                            <div class="flex gap-3 p-4 border-b border-gray-800 hover:bg-[#0f0f0f] cursor-pointer">
+                                <img src="https://i.pravatar.cc/50" class="rounded-full h-10" />
+
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <p class="font-semibold">Samridhi Gupta</p>
+                                        <span
+                                            class="material-symbols-outlined text-[#1d9bf0] text-[18px]">verified</span>
+                                        <p class="text-gray-500 text-sm">@samridhi · 1h</p>
+                                        <span class="material-symbols-outlined ml-auto text-gray-500">more_horiz</span>
+                                    </div>
+
+                                    <p class="mt-2">
+                                        Somewhere between college lectures and coding, I’m building my future 💻✨
+                                    </p>
+
+                                    <!-- ACTIONS -->
+                                    <div class="flex justify-between mt-3 text-gray-500 max-w-[420px]">
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined text-[18px]">chat_bubble</span>18
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-green-500">
+                                            <span class="material-symbols-outlined text-[18px]">repeat</span>7
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-pink-500">
+                                            <span class="material-symbols-outlined text-[18px]">favorite</span>140
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined text-[18px]">bar_chart</span>2k
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined hover:text-[#1d9bf0]">bookmark_border</span>
+                                        <span class="material-symbols-outlined hover:text-[#1d9bf0]">upload</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- POST 3 : IMAGE -->
+                            <div class="flex gap-3 p-4 border-b border-gray-800 hover:bg-[#0f0f0f] cursor-pointer">
+                                <img src="https://i.pravatar.cc/51" class="rounded-full h-10" />
+
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <p class="font-semibold">UI Designer</p>
+                                        <p class="text-gray-500 text-sm">@design · 3h</p>
+                                        <span class="material-symbols-outlined ml-auto text-gray-500">more_horiz</span>
+                                    </div>
+
+                                    <p class="mt-2">New UI inspiration for my next project 🔥</p>
+
+                                    <img src="https://picsum.photos/500/300"
+                                        class="rounded-2xl mt-3 border border-gray-800" />
+
+                                    <!-- ACTIONS -->
+                                    <div class="flex justify-between mt-3 text-gray-500 max-w-[420px]">
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined">chat_bubble</span>42
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-green-500">
+                                            <span class="material-symbols-outlined">repeat</span>12
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-pink-500">
+                                            <span class="material-symbols-outlined">favorite</span>320
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined">bar_chart</span>8k
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined hover:text-[#1d9bf0]">bookmark_border</span>
+                                        <span class="material-symbols-outlined hover:text-[#1d9bf0]">upload</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- POST 4 : MULTI IMAGE -->
+                            <div class="flex gap-3 p-4 border-b border-gray-800 hover:bg-[#0f0f0f] cursor-pointer">
+                                <img src="https://i.pravatar.cc/52" class="rounded-full h-10" />
+
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <p class="font-semibold">Frontend Dev</p>
+                                        <p class="text-gray-500 text-sm">@frontend · 5h</p>
+                                    </div>
+
+                                    <p class="mt-2">Some UI shots from today ✨</p>
+
+                                    <div class="grid grid-cols-2 gap-2 mt-3">
+                                        <img src="https://picsum.photos/200" class="rounded-xl" />
+                                        <img src="https://picsum.photos/201" class="rounded-xl" />
+                                        <img src="https://picsum.photos/202" class="rounded-xl" />
+                                        <img src="https://picsum.photos/203" class="rounded-xl" />
+                                    </div>
+
+                                    <!-- ACTIONS -->
+                                    <div class="flex justify-between mt-3 text-gray-500 max-w-[420px]">
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined">chat_bubble</span>29
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-green-500">
+                                            <span class="material-symbols-outlined">repeat</span>9
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-pink-500">
+                                            <span class="material-symbols-outlined">favorite</span>210
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined">bar_chart</span>5k
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined hover:text-[#1d9bf0]">bookmark_border</span>
+                                        <span class="material-symbols-outlined hover:text-[#1d9bf0]">upload</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- POST 5 : POLL -->
+                            <div class="flex gap-3 p-4 border-b border-gray-800 hover:bg-[#0f0f0f] cursor-pointer">
+                                <img src="https://i.pravatar.cc/53" class="rounded-full h-10" />
+
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <p class="font-semibold">Tech Community</p>
+                                        <p class="text-gray-500 text-sm">@tech · 8h</p>
+                                    </div>
+
+                                    <p class="mt-2 font-medium">Which tech stack should beginners learn?</p>
+
+                                    <div class="mt-3 space-y-2">
+                                        <div class="border border-gray-700 p-2 rounded-full hover:bg-gray-800">MERN
+                                        </div>
+                                        <div class="border border-gray-700 p-2 rounded-full hover:bg-gray-800">Java
+                                        </div>
+                                        <div class="border border-gray-700 p-2 rounded-full hover:bg-gray-800">Python
+                                        </div>
+                                    </div>
+
+                                    <!-- ACTIONS -->
+                                    <div class="flex justify-between mt-3 text-gray-500 max-w-[420px]">
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined">chat_bubble</span>120
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-green-500">
+                                            <span class="material-symbols-outlined">repeat</span>48
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-pink-500">
+                                            <span class="material-symbols-outlined">favorite</span>980
+                                        </div>
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined">bar_chart</span>20k
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined hover:text-[#1d9bf0]">bookmark_border</span>
+                                        <span class="material-symbols-outlined hover:text-[#1d9bf0]">upload</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--post 6-->
+
+                            <div class="flex gap-3 p-4 border-b border-gray-800 hover:bg-[#0f0f0f] cursor-pointer">
+
+                                <img src="https://i.pravatar.cc/44" class="rounded-full h-10" />
+
+                                <div class="flex-1">
+
+                                    <div class="flex items-center gap-2">
+                                        <p class="font-semibold">Tech Bytes</p>
+                                        <p class="text-gray-500 text-sm">@tech · 8h</p>
+
+                                        <span class="material-symbols-outlined ml-auto text-gray-500 hover:text-white">
+                                            more_horiz
+                                        </span>
+                                    </div>
+
+                                    <p class="mt-2">
+                                        5 mistakes every beginner developer makes 👇
+                                    </p>
+
+                                    <div class="border border-gray-700 rounded-xl p-3 mt-3 hover:bg-gray-800">
+                                        <p class="text-gray-400">Show this thread</p>
+                                    </div>
+
+                                    <!-- Actions -->
+                                    <div class="flex justify-between mt-3 text-gray-500 max-w-[420px]">
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined text-[18px]">chat_bubble</span>80
+                                        </div>
+
+                                        <div class="flex items-center gap-2 hover:text-green-500">
+                                            <span class="material-symbols-outlined text-[18px]">repeat</span>30
+                                        </div>
+
+                                        <div class="flex items-center gap-2 hover:text-pink-500">
+                                            <span class="material-symbols-outlined text-[18px]">favorite</span>650
+                                        </div>
+
+                                        <div class="flex items-center gap-2 hover:text-[#1d9bf0]">
+                                            <span class="material-symbols-outlined text-[18px]">bar_chart</span>25k
+                                        </div>
+
+                                        <span
+                                            class="material-symbols-outlined hover:text-[#1d9bf0]">bookmark_border</span>
+                                        <span class="material-symbols-outlined hover:text-[#1d9bf0]">upload</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Loading-->
+
+                            <div id="loading" class="text-center p-4 text-gray-500 hidden">
+                                Loading more posts...
+                            </div>
+
+                        </div>
+                </main>
+
+
+                <div class="flex flex-col shrink-0 w-105 bg-black h-fit relative">
+
+                    <!--- Right Sidebar -->
+
+                    <aside id="rightAside" class="hidden lg:block px-4 self-start">
+                        <div id="rightSidebar" class="space-y-3  relative">
+
+                            <!-- Search -->
+                            <div class=" bg-black pb-2 pt-0.5 backdrop-blur-md z-10 bottom-12.5 sticky top-0.5 ">
+                                <div class="flex items-center rounded-full px-4 py-2 bg-black border-gray-800
+                            focus-within:border-2 focus-within:border-[#1d9bf0] border transition">
+                                    <span class="material-symbols-outlined text-gray-400 mr-2">search</span>
+                                    <input type="text" placeholder="Search"
+                                        class="bg-transparent outline-none w-full text-[14px]" />
+                                </div>
+                            </div>
+
+                            <!-- Subscribe -->
+                            <div class="bg-black border border-gray-800 rounded-2xl p-4 m-3">
+                                <h2 class="text-[20px] font-bold">Subscribe to Premium</h2>
+                                <p class="text-sm text-gray-400 mt-1">
+                                    Get rid of ads, see analytics, boost replies and unlock more features.
+                                </p>
+                                <button class="bg-[#1d9bf0] px-4 py-2 rounded-full mt-3 font-semibold">
+                                    Subscribe
+                                </button>
+                            </div>
+
+                            <!-- Live -->
+                            <div class="bg-black border border-gray-800 rounded-2xl p-4 m-3
+                            ">
+                                <h2 class="text-[20px] font-bold mb-2">Live on X</h2>
+                                <div class="text text-white font-bold pb-1.5 flex items-center gap-3">
+                                    <span class="material-symbols-outlined">bolt</span>
+                                    Trending discussions
+                                </div>
+                                <div class="text-sm text-white font-bold"># Live: सुबह 8 बजे की बड़ी खबर</div>
+                            </div>
+
+                            <!--Today's News -->
+
+                            <div class="bg-black border border-gray-800 rounded-2xl p-4 m-3">
+                                <h2 class="text-[20px] font-bold mb-2">Today's News</h2>
+                                <div class="text text-white font-bold pb-1.5 flex items-center gap-3">
+                                    <span class="py-2.5">
+                                        X Users Discuss AI-Generated Video of Transforming Plane and Helicopter with
+                                        Minigun.
+                                    </span>
+                                </div>
+                                <div class="text-sm text-white font-bold"># Live: सुबह 8 बजे की बड़ी खबर</div>
+                            </div>
+                            <div class="bg-black border border-gray-800 rounded-2xl p-4 m-3">
+                                <h2 class="text-[20px] font-bold mb-2">Today's News</h2>
+                                <div class="text text-white font-bold pb-1.5 flex items-center gap-3">
+                                    <span class="py-2.5">
+                                        X Users Discuss AI-Generated Video of Transforming Plane and Helicopter with
+                                        Minigun.
+                                    </span>
+                                </div>
+                                <div class="text-sm text-white font-bold"># Live: सुबह 8 बजे की बड़ी खबर</div>
+                            </div>
+                            <div class="bg-black border border-gray-800 rounded-2xl p-4 m-3">
+                                <h2 class="text-[20px] font-bold mb-2">Today's News</h2>
+                                <div class="text text-white font-bold pb-1.5 flex items-center gap-3">
+                                    <span class="py-2.5">
+                                        X Users Discuss AI-Generated Video of Transforming Plane and Helicopter with
+                                        Minigun.
+                                    </span>
+                                </div>
+                                <div class="text-sm text-white font-bold"># Live: सुबह 8 बजे की बड़ी खबर</div>
+                            </div>
+                            <div class="bg-black border border-gray-800 rounded-2xl p-4 m-3">
+                                <h2 class="text-[20px] font-bold mb-2">Today's News</h2>
+                                <div class="text text-white font-bold pb-1.5 flex items-center gap-3">
+                                    <span class="py-2.5">
+                                        X Users Discuss AI-Generated Video of Transforming Plane and Helicopter with
+                                        Minigun.
+                                    </span>
+                                </div>
+                                <div class="text-sm text-white font-bold"># Live: सुबह 8 बजे की बड़ी खबर</div>
+                            </div>
+                            <div class="bg-black border border-gray-800 rounded-2xl p-4 m-3">
+                                <h2 class="text-[20px] font-bold mb-2">Today's News</h2>
+                                <div class="text text-white font-bold pb-1.5 flex items-center gap-3">
+                                    <span class="py-2.5">
+                                        X Users Discuss AI-Generated Video of Transforming Plane and Helicopter with
+                                        Minigun.
+                                    </span>
+                                </div>
+                                <div class="text-sm text-white font-bold"># Live: सुबह 8 बजे की बड़ी खबर</div>
+                            </div>
+
+                            <!--terms-->
+                            <div class="terms m-3 text-xs text-gray-500 px-3  w-1/2 py-5   space-y-1">
+                                <span class="hover:underline cursor-pointer mr-2">Terms of Service</span>
+                                <span class="hover:underline cursor-pointer mr-2">Privacy Policy</span>
+                                <span class="hover:underline cursor-pointer mr-2">Cookie Policy</span>
+                                <span class="hover:underline cursor-pointer mr-2">Accessibility</span>
+                                <span class="hover:underline cursor-pointer mr-2">Ads info</span>
+                                <span class="hover:underline cursor-pointer mr-2">More</span>
+                                <span class="hover:underline cursor-pointer mr-2">© 2024 X Corp.</span>
+                            </div>
+                        </div>
+
+                        <div class="h-[800px]"></div>
+
+                    </aside>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- MOBILE BOTTOM NAV -->
+    <div class="fixed bottom-0 w-full max-w-[1280px] mx-auto left-0 right-0 bg-black border-t border-gray-800 
+flex justify-around items-center py-2 md:hidden">
+
+        <span class="material-symbols-outlined">home</span>
+        <span class="material-symbols-outlined">search</span>
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="material-symbols-outlined">mail</span>
+
+        <!-- profile image only -->
+        <img src="https://i.pravatar.cc/32" class="w-7 h-7 rounded-full">
+
+    </div>
+
+
+    <!-- FLOATING RIGHT BUTTONS -->
+    <div class="fixed bottom-6 right-6 flex-col gap-3 z-999 hidden md:flex transition-all duration-300">
+
+        <button class="w-17 h-17 bg-black rounded-2xl
+shadow-[0_0_25px_rgba(255,255,255,0.12),0_0_60px_rgba(255,255,255,0.08)]
+flex items-center justify-center">
+            <span class="material-symbols-outlined text-white">
+                orbit
+            </span>
+        </button>
+
+        <button class="w-17 h-17 bg-black rounded-2xl
+shadow-[0_0_25px_rgba(255,255,255,0.12),0_0_60px_rgba(255,255,255,0.08)]
+flex items-center justify-center">
+
+            <span class="material-symbols-outlined text-white">
+                chat
+            </span>
+        </button>
+
+    </div>
+
+
+    <!--Javascript for infinite scroll loading indicator-->
+    <script>
+        let count = 0;
+
+        function createPost() {
+            const types = ["text", "image", "video"];
+            const type = types[Math.floor(Math.random() * types.length)];
+
+            let post = "";
+
+            // TEXT POST
+            if (type === "text") {
+                post = `
+    <div class="border-b border-gray-700 p-4 hover:bg-[#0a0a0a]">
+        <div class="flex gap-3">
+        <img src="https://i.pravatar.cc/40?img=${count}" class="rounded-full flex-shrink-0 w-10 h-10 object-cover">
+            <div>
+            <p class="font-bold">User ${count}</p>
+            <p class="text-gray-400">@user${count}</p>
+            <p class="mt-2">This is text post number ${count}. Learning and building daily 🚀</p>
+            </div>
+        </div>
+    </div>`;
+            }
+
+            // IMAGE POST
+            if (type === "image") {
+                post = `
+    <div class="border-b border-gray-700 p-4 hover:bg-[#0a0a0a]">
+        <div class="flex gap-3">
+        <img src="https://i.pravatar.cc/40?img=${count}" class="rounded-full flex-shrink-0 w-10 h-10 object-cover">
+            <div class="w-full">
+            <p class="font-bold">User ${count}</p>
+            <p class="text-gray-400">@photo${count}</p>
+            <p class="mt-2">Beautiful moments 📸</p>
+            <img src="https://picsum.photos/600/350?random=${count}" class="rounded-xl mt-3">
+            </div>
+        </div>
+    </div>`;
+            }
+
+            // VIDEO POST
+            if (type === "video") {
+                post = `
+    <div class="border-b border-gray-700 p-4 hover:bg-[#0a0a0a]">
+        <div class="flex gap-3">
+        <img src="https://i.pravatar.cc/40?img=${count}" class="rounded-full flex-shrink-0 w-10 h-10 object-cover">
+            <div class="w-full">
+            <p class="font-bold">User ${count}</p>
+            <p class="text-gray-400">@video${count}</p>
+            <p class="mt-2">Watch this cool video 🎥</p>
+            <video controls class="rounded-xl mt-3 w-full">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+            </div>
+        </div>
+    </div>`;
+            }
+
+            count++;
+            return post;
+        }
+
+
+        // LOAD POSTS
+        function loadPosts() {
+            const loader = document.getElementById("loading");
+            loader.classList.remove("hidden");
+
+            setTimeout(() => {
+                let posts = "";
+                for (let i = 0; i < 5; i++) {
+                    posts += createPost();
+                }
+                document.getElementById("feed").innerHTML += posts;
+                loader.classList.add("hidden");
+            }, 800);
+        }
+
+
+        // INITIAL LOAD
+        loadPosts();
+
+
+        // INFINITE SCROLL
+        const scrollContainer = document.getElementById("scrollContainer");
+
+        scrollContainer.addEventListener("scroll", () => {
+            if (
+                scrollContainer.scrollTop + scrollContainer.clientHeight >=
+                scrollContainer.scrollHeight - 200
+            ) {
+                loadPosts();
+            }
+        });
+
+        scrollContainer.addEventListener("scroll", () => {
+            if (
+                scrollContainer.scrollTop + scrollContainer.clientHeight >=
+                scrollContainer.scrollHeight - 200
+            ) {
+                loadPosts();
+            }
+        });
+
+
+        // RIGHT SIDEBAR STOP LOGIC
+        const rightAside = document.getElementById("rightAside");
+
+        scrollContainer.addEventListener("scroll", () => {
+
+            const bottomGap = 50;
+
+            const containerBottom =
+                scrollContainer.scrollHeight -
+                scrollContainer.scrollTop -
+                scrollContainer.clientHeight;
+
+            // sidebar stop only
+            if (containerBottom < 200) {
+                rightAside.style.position = "absolute";
+                rightAside.style.bottom = bottomGap + "px";
+                rightAside.style.top = "auto";
+            } else {
+                rightAside.style.position = "sticky";
+                rightAside.style.top = "80px";
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

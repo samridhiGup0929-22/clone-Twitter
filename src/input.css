@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* ===== DEFAULT STATE ===== */
+.scrollbar-hover::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-hover::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 9999px;
+}
+
+/* ===== HOVER STATE ===== */
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+/* Firefox */
+.scrollbar-hover {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-hover:hover {
+  scrollbar-color: #6b7280 transparent;
+}
